@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react';
-import Card from '../UI/Card';
+import Card from './UI/Card';
+import classes from './SearchBeach.module.css';
 
 const SearchBeach = () => {
-
+    const addBeachHandler = (event) => {
+        event.preventDefault();
+        const beach = event.value
+    }
     return (
         <Fragment>
-            <Card>
-                <form>
+            <Card className={classes.input}>
+                <form onSubmit={addBeachHandler}>
                     <label htmlFor='beach'>
                         Beach
                     </label>
@@ -15,12 +19,13 @@ const SearchBeach = () => {
                     <label htmlFor='day'>
                         Day
                     </label>
-                    <input type="text" id="day" />
+                    <input type="date" id="day" />
 
                     <label htmlFor='time'>
                         Time
                     </label>
-                    <input type="text" id="time" />
+                    <input type="time" id="time" />
+                    <button type="submit">Add Beach</button>
                 </form>
             </Card>
         </Fragment>

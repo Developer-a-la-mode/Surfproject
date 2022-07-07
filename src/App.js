@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import BeachData from './components/BeachData';
+import SearchBeach from './components/SearchBeach';
 
 
 function App() {
   return (
-    <div>
-      Hello World
-    </div>
+    <Fragment>
+      <SearchBeach />
+      <BeachData />
+    </Fragment>
   );
 }
 
