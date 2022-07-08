@@ -11,7 +11,9 @@ const SearchBeach = () => {
     const addBeachHandler = (event) => {
         event.preventDefault();
         console.log(enteredBeachSearch, enteredDateSearch, enteredTimeSearch);
-
+        setEnteredBeachSearch('');
+        setEnteredDateSearch('');
+        setEnteredTimeSearch('');
     }
 
     const beachChangeHandler = (event) => {
@@ -34,17 +36,17 @@ const SearchBeach = () => {
                     <label htmlFor='beach'>
                         Beach
                     </label>
-                    <input type="text" id="beach" onChange={beachChangeHandler} />
+                    <input type="text" id="beach" onChange={beachChangeHandler} value={enteredBeachSearch} />
 
                     <label htmlFor='date'>
                         Day
                     </label>
-                    <input type="date" id="date" onChange={dateChangeHandler} />
+                    <input type="date" id="date" onChange={dateChangeHandler} value={enteredDateSearch} />
 
                     <label htmlFor='time'>
                         Time
                     </label>
-                    <input type="time" id="time" onChange={timeChangeHandler} />
+                    <input type="time" id="time" onChange={timeChangeHandler} value={enteredTimeSearch} />
                     <Button type="submit">Add Beach</Button>
                 </form>
             </Card>
