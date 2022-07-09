@@ -10,6 +10,16 @@ const SearchBeach = () => {
 
     const addBeachHandler = (event) => {
         event.preventDefault();
+
+        const enteredDateInput = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{4}-/;
+
+        if(enteredBeachSearch.trim().length === 0 || enteredDateSearch.trim().length === 0 || enteredTimeSearch.trim().length === 0) {
+            return
+        }
+        if(enteredDateInput.test({enteredDateSearch})) {
+            console.log('its working');
+        }
+
         console.log(enteredBeachSearch, enteredDateSearch, enteredTimeSearch);
         setEnteredBeachSearch('');
         setEnteredDateSearch('');
