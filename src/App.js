@@ -4,9 +4,13 @@ import SearchBeach from './components/SearchBeach';
 
 
 function App() {
+  const searchBeachList = (beach,time,day) => {
+
+  }
+
   return (
     <Fragment>
-      <SearchBeach />
+      <SearchBeach onSearchBeach={searchBeachList} />
       <BeachData />
     </Fragment>
   );

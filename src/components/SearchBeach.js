@@ -8,7 +8,7 @@ const SearchBeach = () => {
     const [enteredDateSearch, setEnteredDateSearch] = useState('');
     const [enteredTimeSearch, setEnteredTimeSearch] = useState('');
 
-    const addBeachHandler = (event) => {
+    const submitHandler = (event) => {
         event.preventDefault();
 
         const enteredDateInput = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{4}-/;
@@ -42,7 +42,7 @@ const SearchBeach = () => {
     return (
         <Fragment>
             <Card className={classes.input}>
-                <form onSubmit={addBeachHandler}>
+                <form onSubmit={submitHandler}>
                     <label htmlFor='beach'>
                         Beach
                     </label>
