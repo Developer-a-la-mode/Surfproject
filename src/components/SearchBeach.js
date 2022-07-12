@@ -3,7 +3,7 @@ import Card from './UI/Card';
 import classes from './SearchBeach.module.css';
 import Button from './UI/Button';
 
-const SearchBeach = () => {
+const SearchBeach = (props) => {
     const [enteredBeachSearch, setEnteredBeachSearch] = useState('');
     const [enteredDateSearch, setEnteredDateSearch] = useState('');
     const [enteredTimeSearch, setEnteredTimeSearch] = useState('');
@@ -20,7 +20,14 @@ const SearchBeach = () => {
             console.log('its working');
         }
 
-        console.log(enteredBeachSearch, enteredDateSearch, enteredTimeSearch);
+        const beachData = {
+            beach: enteredBeachSearch,
+            date: new Date(enteredDateSearch),
+            time: enteredTimeSearch
+        }
+
+        props.onSubmitSearchBeach(beachData);
+
         setEnteredBeachSearch('');
         setEnteredDateSearch('');
         setEnteredTimeSearch('');

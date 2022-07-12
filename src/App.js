@@ -4,13 +4,18 @@ import SearchBeach from './components/SearchBeach';
 
 
 function App() {
-  const searchBeachList = (beach,time,day) => {
+  const searchBeachList = (enteredBeachData) => {
+    const beachDataEntered = {
+      ...enteredBeachData,
+      id: Math.random().toString()
+    }
 
+    console.log(beachDataEntered);
   }
 
   return (
     <Fragment>
-      <SearchBeach onSearchBeach={searchBeachList} />
+      <SearchBeach onSubmitSearchBeach={searchBeachList} />
       <BeachData />
     </Fragment>
   );
