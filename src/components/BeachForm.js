@@ -3,7 +3,7 @@ import Card from './UI/Card';
 import classes from './SearchBeach.module.css';
 import Button from './UI/Button';
 
-const SearchBeach = (props) => {
+const BeachForm = (props) => {
     const [enteredBeachSearch, setEnteredBeachSearch] = useState('');
     const [enteredDateSearch, setEnteredDateSearch] = useState('');
     const [enteredTimeSearch, setEnteredTimeSearch] = useState('');
@@ -71,4 +71,4 @@ const SearchBeach = (props) => {
     );
 }
 
-export default SearchBeach;
+export default BeachForm;
