@@ -21,9 +21,9 @@ const BeachForm = (props) => {
         }
 
         const beachData = {
-            beach: enteredBeachSearch,
-            date: new Date(enteredDateSearch),
-            time: enteredTimeSearch
+            beachs: enteredBeachSearch,
+            date: enteredDateSearch,
+            timeq: enteredTimeSearch
         }
 
         props.onSubmitSearchBeach(beachData);

@@ -8,13 +8,13 @@ function App() {
 
   const searchBeachList = (enteredBeachData) => {
     const beachDataEntered = {
-      ...enteredBeachData,
-      id: Math.random().toString()
+      id: Math.random().toString(),
+      ...enteredBeachData
     }
 
 
     addBeach((prevBeaches) => {
-      return [...prevBeaches, beachDataEntered]
+      return [beachDataEntered, ...prevBeaches]
     });
     
   }
@@ -24,7 +24,7 @@ function App() {
   return (
     <Fragment>
       <SearchBeach onSubmitSearchBeach={searchBeachList} />
-      <BeachData onSaveBeachData={searchedBeaches} />
+      <BeachData beaches={searchedBeaches} />
     </Fragment>
   );
   }

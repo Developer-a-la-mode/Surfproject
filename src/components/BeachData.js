@@ -4,15 +4,18 @@ import classes from './BeachData.module.css';
 
 const BeachData = (props) => {
     return (
-        props.searchedBeaches.map(beach =>
-            <Card className={classes.beachdatalist}>
-                <ul>
-                    <li>
-                        {beach.name}, {beach.date} {beach.time}
+        <Card className={classes.beachdatalist}>
+        <ul>
+
+            {props.beaches.map((beach =>
+                    <li key={beach.id}>
+                        {beach.beachs}, {beach.date} {beach.timeq}
                     </li>
-                </ul>
-            </Card>
-        ))
+            ))}
+            </ul>
+
+        </Card>
+    )
 }
 
 export default BeachData;
