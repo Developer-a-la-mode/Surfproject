@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import Card from './UI/Card';
-import classes from './SearchBeach.module.css';
+import classes from './BeachForm.module.css';
 import Button from './UI/Button';
 
 const BeachForm = (props) => {
@@ -21,9 +21,9 @@ const BeachForm = (props) => {
         }
 
         const beachData = {
-            beachs: enteredBeachSearch,
+            beach: enteredBeachSearch,
             date: enteredDateSearch,
-            timeq: enteredTimeSearch
+            time: enteredTimeSearch
         }
 
         props.onSubmitSearchBeach(beachData);

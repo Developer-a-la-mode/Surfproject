@@ -6,14 +6,12 @@ const BeachData = (props) => {
     return (
         <Card className={classes.beachdatalist}>
         <ul>
-
-            {props.beaches.map((beach =>
-                    <li key={beach.id}>
-                        {beach.beachs}, {beach.date} {beach.timeq}
+            {props.beaches.map((beachItem =>
+                    <li key={beachItem.id}>
+                        {beachItem.beach}, {beachItem.date} {beachItem.time}
                     </li>
             ))}
             </ul>
-
         </Card>
     )
 }
