@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 import Card from './UI/Card';
 import classes from './BeachForm.module.css';
 import Button from './UI/Button';
+import ErrorModal  from './UI/ErrorModal';
 
 const BeachForm = (props) => {
     const [enteredBeachSearch, setEnteredBeachSearch] = useState('');
@@ -42,6 +43,7 @@ const BeachForm = (props) => {
 
     return (
         <Fragment>
+        <ErrorModal title="An Error Occured!" message="Something went wrong!" />
             <Card className={classes.input}>
                 <form onSubmit={submitHandler}>
                     <label htmlFor='beach'>
