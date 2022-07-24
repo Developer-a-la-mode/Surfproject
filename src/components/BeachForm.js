@@ -8,6 +8,7 @@ const BeachForm = (props) => {
     const [enteredBeachSearch, setEnteredBeachSearch] = useState('');
     const [enteredDateSearch, setEnteredDateSearch] = useState('');
     const [enteredTimeSearch, setEnteredTimeSearch] = useState('');
+    const [error, setError] = useState();
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -15,7 +16,11 @@ const BeachForm = (props) => {
         const enteredDateInput = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{4}-/;
 
         if(enteredBeachSearch.trim().length === 0 || enteredDateSearch.trim().length === 0 || enteredTimeSearch.trim().length === 0) {
-            return
+            setError({
+                title: 'invlaid input',
+                message: 'Please enter a valid beach.'
+            })
+            return;
         }
         if(enteredDateInput.test({enteredDateSearch})) {
             console.log('its working');
@@ -43,7 +48,7 @@ const BeachForm = (props) => {
 
     return (
         <Fragment>
-        <ErrorModal title="An Error Occured!" message="Something went wrong!" />
+        {error && <ErrorModal title={error.title} message={error.message} />}
             <Card className={classes.input}>
                 <form onSubmit={submitHandler}>
                     <label htmlFor='beach'>
