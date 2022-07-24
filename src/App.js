@@ -1,15 +1,21 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import BeachData from './components/BeachData';
+import BeachForm from './components/BeachForm';
 
 
 function App() {
-  const searchedBeaches = () => {
-    
+  const [searchedBeachData, setSearchedBeachData] = useState([]);
+
+  const addBeachHandler = (beachInput,dateInput,timeInput) => {
+    setSearchedBeachData((prevBeachList) => {
+      return [...prevBeachList, {id: Math.random().toString(), beach: beachInput, date: dateInput, time: timeInput}]
+    })
   }
 
   return (
     <Fragment>
-      <BeachData beaches={searchedBeaches} />
+      <BeachForm onAddBeach={addBeachHandler} />
+      <BeachData beaches={searchedBeachData} />
     </Fragment>
   );
   }

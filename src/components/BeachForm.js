@@ -20,13 +20,7 @@ const BeachForm = (props) => {
             console.log('its working');
         }
 
-        const beachData = {
-            beach: enteredBeachSearch,
-            date: enteredDateSearch,
-            time: enteredTimeSearch
-        }
-
-        props.onSubmitSearchBeach(beachData);
+        props.onAddBeach(enteredBeachSearch,enteredDateSearch,enteredTimeSearch);
 
         setEnteredBeachSearch('');
         setEnteredDateSearch('');

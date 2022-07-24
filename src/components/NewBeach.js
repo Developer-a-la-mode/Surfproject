@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BeachForm from './components/BeachForm';
+import BeachForm from './BeachForm';
 
 
 const NewBeach = (props) => {
@@ -15,7 +15,7 @@ const NewBeach = (props) => {
         addBeach((prevBeaches) => {
             return [beachDataEntered, ...prevBeaches]
         });
-        props.beaches(searchedBeaches);
+        // props.beaches(searchedBeaches);
     }
 
     return (
