@@ -45,10 +45,14 @@ const BeachForm = (props) => {
         setEnteredTimeSearch(event.target.value)
     }
 
+    const errorHandler = () => {
+        setError(null);
+    }
+
 
     return (
         <Fragment>
-        {error && <ErrorModal title={error.title} message={error.message} />}
+        {error && <ErrorModal title={error.title} message={error.message} onConfirmError={errorHandler}/>}
             <Card className={classes.input}>
                 <form onSubmit={submitHandler}>
                     <label htmlFor='beach'>
@@ -65,7 +69,7 @@ const BeachForm = (props) => {
                         Time
                     </label>
                     <input type="time" id="time" onChange={timeChangeHandler} value={enteredTimeSearch} />
-                    <Button type="submit">Add Beach</Button>
+                    <Button type="submit" onConfirmError={errorHandler}>Add Beach</Button>
                 </form>
             </Card>
         </Fragment>
